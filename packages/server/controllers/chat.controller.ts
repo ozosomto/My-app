@@ -12,7 +12,7 @@ const ChatRequestSchema = z.object({
     .trim()
     .min(1, "Prompt cannot be empty.")
     .max(1000, "Prompt is too long (max 1000 characters)"),
-    conversationId: z.string().uuid()
+    conversationId: z.string().uuid().optional()
 });
 
 
@@ -37,6 +37,5 @@ try {
 } catch (error) {
     res.status(500).json({ error: 'An error occurred while processing your request.' })
 }  
-
 }
 }

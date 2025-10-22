@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import { Button } from "./components/ui/button";
+import ChatBox from "./components/ChatBox/chatbox";
 
 function App() {
   const [messge, setMessage] = useState("");
@@ -14,11 +15,10 @@ function App() {
 
   return (
     <>
-      <div className="p-4">
-        {/* <h1>Message from Server:</h1> */}
-        <p className="font-bold text-3xl">{messge}</p>
-        <Button>Click me</Button>
-      </div>
+       <div className="min-h-screen flex flex-col items-center justify-center bg-gray-900 text-white p-6">
+      <h1 className="text-3xl font-bold mb-6 text-blue-400">AI Chat Assistant 🤖</h1>
+      <ChatBox />
+    </div>
     </>
   );
 }
